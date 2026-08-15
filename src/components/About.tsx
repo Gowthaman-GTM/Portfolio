@@ -9,7 +9,7 @@ export const About: React.FC = () => {
   return (
     <section id="about" className="py-20 relative bg-slate-950/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         {/* Section Header */}
         <div className="flex flex-col items-center text-center space-y-3 mb-16">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-xs font-semibold tracking-wider uppercase">
@@ -24,12 +24,12 @@ export const About: React.FC = () => {
 
         {/* Top Row: Photo Card (4 cols) & Academic Bio Card (8 cols) */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-8">
-          
+
           {/* Column 1: Portrait Photo Card */}
           <div className="lg:col-span-4 bg-slate-900/90 border border-slate-800 rounded-2xl p-4 flex flex-col gap-4 shadow-xl relative overflow-hidden group hover:border-cyan-500/30 transition-all">
             <div className="relative w-full h-[340px] sm:h-[380px] rounded-xl overflow-hidden border border-slate-800/80">
               <img
-                src={profileImgUrl}
+                src={`${import.meta.env.BASE_URL}gowthaman.jpg`}
                 alt="Atputhathevarajah Gowthaman"
                 className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
               />
@@ -39,7 +39,7 @@ export const About: React.FC = () => {
                 <p className="text-[11px] text-cyan-300 font-mono">{personalInfo.university}</p>
               </div>
             </div>
-            
+
             <div className="w-full space-y-2 text-xs font-mono text-slate-300 bg-slate-950/60 p-3 rounded-xl border border-slate-800/80">
               <div className="flex justify-between">
                 <span className="text-slate-400">Status:</span>
@@ -117,7 +117,7 @@ export const About: React.FC = () => {
 
         {/* Bottom Row: Career, Technical Focus & Communication Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          
+
           {/* Career Interests Card */}
           <div className="bg-slate-900/90 border border-slate-800 rounded-2xl p-6 shadow-xl space-y-4 hover:border-cyan-500/30 transition-all flex flex-col justify-between">
             <div className="space-y-4">
