@@ -117,8 +117,7 @@ export const Resume: React.FC<ResumeProps> = ({ onOpenCVModal }) => {
                   alt="Atputhathevarajah Gowthaman"
                   className="w-full h-full object-cover object-top"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent" />
-                <div className="absolute bottom-2 left-2 right-2 text-[10px] font-mono text-cyan-300 truncate">
+                <div className="absolute bottom-0 inset-x-0 bg-slate-950/80 p-1.5 text-center text-[10px] font-mono text-cyan-300 truncate border-t border-slate-800">
                   {personalInfo.name}
                 </div>
               </div>

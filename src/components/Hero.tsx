@@ -135,7 +135,6 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCVModal }) => {
                     alt="Atputhathevarajah Gowthaman - IT Undergraduate & AI/ML Enthusiast"
                     className="w-full h-full object-cover object-top group-hover/img:scale-105 transition-transform duration-700"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent opacity-85" />
                 </div>
               </div>
             </div>

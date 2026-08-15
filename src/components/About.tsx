@@ -29,12 +29,11 @@ export const About: React.FC = () => {
           <div className="lg:col-span-4 bg-slate-900/90 border border-slate-800 rounded-2xl p-4 flex flex-col gap-4 shadow-xl relative overflow-hidden group hover:border-cyan-500/30 transition-all">
             <div className="relative w-full h-[340px] sm:h-[380px] rounded-xl overflow-hidden border border-slate-800/80">
               <img
-                src={`${import.meta.env.BASE_URL}gowthaman.jpg`}
+                src={profileImgUrl}
                 alt="Atputhathevarajah Gowthaman"
                 className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-75" />
-              <div className="absolute bottom-3 left-3 right-3 text-left">
+              <div className="absolute bottom-0 inset-x-0 bg-slate-950/80 backdrop-blur-md p-3 border-t border-slate-800/80">
                 <p className="text-sm font-bold text-white font-display">{personalInfo.name}</p>
                 <p className="text-[11px] text-cyan-300 font-mono">{personalInfo.university}</p>
               </div>
