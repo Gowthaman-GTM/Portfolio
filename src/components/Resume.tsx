@@ -1,12 +1,16 @@
 import React from 'react';
 import { FileText, Download, Eye, CheckCircle2, GraduationCap } from 'lucide-react';
 import { personalInfo, contactInfo } from '../data/portfolioData';
+import { getAssetUrl } from '../utils/assets';
 
 interface ResumeProps {
   onOpenCVModal: () => void;
 }
 
 export const Resume: React.FC<ResumeProps> = ({ onOpenCVModal }) => {
+  const cvPdfUrl = getAssetUrl('/Gowthaman_Atputhathevarajah_CV.pdf');
+  const profileImgUrl = getAssetUrl('/gowthaman.jpg');
+
   return (
     <section id="resume" className="py-20 relative bg-slate-950">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -29,7 +33,6 @@ export const Resume: React.FC<ResumeProps> = ({ onOpenCVModal }) => {
         {/* Featured Resume Preview Card */}
         <div className="max-w-4xl mx-auto bg-slate-900/90 border border-slate-800 rounded-3xl p-6 sm:p-10 shadow-2xl relative overflow-hidden group hover:border-cyan-500/40 transition-all duration-300">
           
-          {/* Subtle Accent Background Grid */}
           <div className="absolute top-0 right-0 w-80 h-80 bg-cyan-500/5 rounded-full blur-3xl pointer-events-none" />
 
           <div className="flex flex-col md:flex-row items-center justify-between gap-8 relative z-10">
@@ -50,7 +53,6 @@ export const Resume: React.FC<ResumeProps> = ({ onOpenCVModal }) => {
                 </p>
               </div>
 
-              {/* Exact user requirement sentence */}
               <p className="text-sm text-slate-300 leading-relaxed bg-slate-950/60 p-4 rounded-xl border border-slate-800/80">
                 "Download my latest CV to learn more about my education, technical skills, projects, and experience."
               </p>
@@ -78,7 +80,7 @@ export const Resume: React.FC<ResumeProps> = ({ onOpenCVModal }) => {
               {/* Actions */}
               <div className="flex flex-wrap items-center gap-4 pt-2">
                 <a
-                  href="/Gowthaman_Atputhathevarajah_CV.pdf"
+                  href={cvPdfUrl}
                   download="Gowthaman_Atputhathevarajah_CV.pdf"
                   className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-cyan-500 text-slate-950 font-bold text-sm shadow-lg shadow-cyan-500/25 hover:bg-cyan-400 hover:shadow-cyan-400/35 transition-all transform hover:-translate-y-0.5 cursor-pointer"
                 >
@@ -111,7 +113,7 @@ export const Resume: React.FC<ResumeProps> = ({ onOpenCVModal }) => {
 
               <div className="relative w-full h-32 rounded-xl overflow-hidden border border-slate-800">
                 <img
-                  src="/gowthaman.jpg"
+                  src={profileImgUrl}
                   alt="Atputhathevarajah Gowthaman"
                   className="w-full h-full object-cover object-top"
                 />

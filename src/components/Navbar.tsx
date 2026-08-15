@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Download } from 'lucide-react';
+import { getAssetUrl } from '../utils/assets';
 
 interface NavbarProps {
   onOpenCVModal: () => void;
@@ -25,7 +26,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCVModal }) => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
 
-      // Section intersection detection
       const sections = NAV_ITEMS.map(item => item.href.substring(1));
       const scrollPosition = window.scrollY + 120;
 
@@ -60,6 +60,9 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCVModal }) => {
     }
   };
 
+  const profileImgUrl = getAssetUrl('/gowthaman.jpg');
+  const cvPdfUrl = getAssetUrl('/Gowthaman_Atputhathevarajah_CV.pdf');
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -77,7 +80,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCVModal }) => {
         >
           <div className="relative w-10 h-10 rounded-xl p-0.5 bg-gradient-to-tr from-cyan-400 via-blue-500 to-indigo-500 shadow-lg shadow-cyan-500/20 group-hover:scale-105 transition-transform overflow-hidden">
             <img
-              src="/gowthaman.jpg"
+              src={profileImgUrl}
               alt="Gowthaman Atputhathevarajah"
               className="w-full h-full rounded-[10px] object-cover"
             />
@@ -116,7 +119,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCVModal }) => {
         {/* Quick Action Button & Mobile Toggle */}
         <div className="flex items-center gap-3">
           <a
-            href="/Gowthaman_Atputhathevarajah_CV.pdf"
+            href={cvPdfUrl}
             download="Gowthaman_Atputhathevarajah_CV.pdf"
             className="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold text-cyan-300 border border-cyan-500/40 bg-cyan-500/10 hover:bg-cyan-500/20 hover:border-cyan-400 transition-all shadow-sm shadow-cyan-500/10 cursor-pointer"
           >

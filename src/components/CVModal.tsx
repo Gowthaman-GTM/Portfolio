@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { X, Download, Printer, GraduationCap, Mail, Phone, FileText, Eye } from 'lucide-react';
 import { GithubIcon, LinkedinIcon } from './SocialIcons';
 import { personalInfo, contactInfo } from '../data/portfolioData';
+import { getAssetUrl } from '../utils/assets';
 
 interface CVModalProps {
   isOpen: boolean;
@@ -13,13 +14,15 @@ export const CVModal: React.FC<CVModalProps> = ({ isOpen, onClose }) => {
 
   if (!isOpen) return null;
 
+  const cvPdfUrl = getAssetUrl('/Gowthaman_Atputhathevarajah_CV.pdf');
+
   const handlePrint = () => {
     window.print();
   };
 
   const handleDownload = () => {
     const link = document.createElement('a');
-    link.href = '/Gowthaman_Atputhathevarajah_CV.pdf';
+    link.href = cvPdfUrl;
     link.download = 'Gowthaman_Atputhathevarajah_CV.pdf';
     document.body.appendChild(link);
     link.click();
@@ -129,7 +132,7 @@ export const CVModal: React.FC<CVModalProps> = ({ isOpen, onClose }) => {
           {viewMode === 'pdf' ? (
             <div className="w-full h-[72vh] rounded-2xl overflow-hidden border border-slate-800 bg-white">
               <iframe
-                src="/Gowthaman_Atputhathevarajah_CV.pdf#toolbar=1"
+                src={`${cvPdfUrl}#toolbar=1`}
                 className="w-full h-full"
                 title="Gowthaman CV PDF Preview"
               />

@@ -2,6 +2,7 @@ import React from 'react';
 import { Mail, ArrowRight, Download } from 'lucide-react';
 import { GithubIcon, LinkedinIcon } from './SocialIcons';
 import { personalInfo, contactInfo } from '../data/portfolioData';
+import { getAssetUrl } from '../utils/assets';
 
 interface HeroProps {
   onOpenCVModal: () => void;
@@ -20,6 +21,9 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCVModal }) => {
       });
     }
   };
+
+  const cvPdfUrl = getAssetUrl('/Gowthaman_Atputhathevarajah_CV.pdf');
+  const profileImgUrl = getAssetUrl('/gowthaman.jpg');
 
   return (
     <section id="home" className="relative min-h-screen pt-28 pb-16 flex items-center justify-center overflow-hidden">
@@ -74,7 +78,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCVModal }) => {
               </a>
 
               <a
-                href="/Gowthaman_Atputhathevarajah_CV.pdf"
+                href={cvPdfUrl}
                 download="Gowthaman_Atputhathevarajah_CV.pdf"
                 onClick={() => onOpenCVModal()}
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-slate-800/90 border border-slate-700 text-white font-semibold text-sm hover:bg-slate-700/80 hover:border-cyan-500/50 transition-all transform hover:-translate-y-0.5 cursor-pointer"
@@ -121,26 +125,17 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCVModal }) => {
 
           {/* Right Column: Visual Professional Profile Card */}
           <div className="lg:col-span-5 relative flex flex-col items-center justify-center">
-            {/* Outer Glow Card */}
             <div className="relative w-full max-w-md group">
-              {/* Animated Glow Backdrop */}
               <div className="absolute -inset-1.5 bg-gradient-to-r from-cyan-500 via-blue-600 to-indigo-600 rounded-3xl blur-xl opacity-40 group-hover:opacity-75 transition duration-700 pointer-events-none" />
               
               <div className="relative bg-slate-900/90 border border-slate-800 rounded-3xl p-4 shadow-2xl backdrop-blur-2xl overflow-hidden">
-                
-                {/* Profile Image Frame */}
                 <div className="relative w-full h-[370px] rounded-2xl overflow-hidden border border-slate-800 group/img">
                   <img
-                    src="/gowthaman.jpg"
+                    src={profileImgUrl}
                     alt="Atputhathevarajah Gowthaman - IT Undergraduate & AI/ML Enthusiast"
                     className="w-full h-full object-cover object-top group-hover/img:scale-105 transition-transform duration-700"
                   />
-                  {/* Subtle Gradient Overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent opacity-85" />
-                  
-
-
-
                 </div>
               </div>
             </div>

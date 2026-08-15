@@ -1,8 +1,11 @@
 import React from 'react';
 import { User, GraduationCap, Target, MessageSquare, Compass, CheckCircle2, Lightbulb } from 'lucide-react';
 import { personalInfo } from '../data/portfolioData';
+import { getAssetUrl } from '../utils/assets';
 
 export const About: React.FC = () => {
+  const profileImgUrl = getAssetUrl('/gowthaman.jpg');
+
   return (
     <section id="about" className="py-20 relative bg-slate-950/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -26,7 +29,7 @@ export const About: React.FC = () => {
           <div className="lg:col-span-4 bg-slate-900/90 border border-slate-800 rounded-2xl p-4 flex flex-col gap-4 shadow-xl relative overflow-hidden group hover:border-cyan-500/30 transition-all">
             <div className="relative w-full h-[340px] sm:h-[380px] rounded-xl overflow-hidden border border-slate-800/80">
               <img
-                src="/gowthaman.jpg"
+                src={profileImgUrl}
                 alt="Atputhathevarajah Gowthaman"
                 className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
               />
@@ -112,7 +115,7 @@ export const About: React.FC = () => {
 
         </div>
 
-        {/* Bottom Row: Career, Technical Focus & Communication Cards across full width */}
+        {/* Bottom Row: Career, Technical Focus & Communication Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           
           {/* Career Interests Card */}
